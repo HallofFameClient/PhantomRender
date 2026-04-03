@@ -158,6 +158,11 @@ namespace PhantomRender.ImGui.Core.Inputs
 
             foreach (KeyValuePair<Keys, ImGuiKey> key in VirtualKeyToImGuiKeyMap)
             {
+                // ----- TAB-TASTE KOMPLETT BLOCKIEREN -----
+                if (key.Value == ImGuiKey.Tab)
+                    continue;
+                // ---------------------------------------
+
                 try
                 {
                     bool isKeyDown = IsKeyDown(key.Key);
